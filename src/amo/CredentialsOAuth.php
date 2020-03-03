@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ReturnTypeCanBeDeclaredInspection */
 
 namespace amocrmtech\models\ar\amo;
 
@@ -51,11 +51,12 @@ class CredentialsOAuth extends ActiveRecord
         return '{{%credentials_oauth}}';
     }
 
+
     /**
      * {@inheritdoc}
      * @return CredentialsOAuthQuery the active query used by this AR class.
      */
-    public static function find():CredentialsOAuthQuery
+    public static function find()
     {
         return new CredentialsOAuthQuery(static::class);
     }

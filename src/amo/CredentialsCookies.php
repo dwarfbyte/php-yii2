@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ReturnTypeCanBeDeclaredInspection */
 
 namespace amocrmtech\models\ar\amo;
 
@@ -46,7 +46,7 @@ class CredentialsCookies extends ActiveRecord
      * {@inheritdoc}
      * @return CredentialsCookiesQuery the active query used by this AR class.
      */
-    public static function find(): CredentialsCookiesQuery
+    public static function find()
     {
         return new CredentialsCookiesQuery(static::class);
     }
