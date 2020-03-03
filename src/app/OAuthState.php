@@ -27,7 +27,8 @@ class OAuthState extends ActiveRecord
      */
     public static function getDb()
     {
-        return Yii::$app->get('dbApp');
+        $db = Yii::$app->params['amocrmtech.models.ar.app.db'];
+        return Yii::$app->get($db);
     }
 
     /**
