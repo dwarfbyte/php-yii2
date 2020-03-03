@@ -8,7 +8,7 @@ return [
             $params['amocrmtech.models.ar.locator'] => [
                 'class'      => ContextualServiceLocator::class,
                 'components' => [
-                    $params['amocrmtech.models.ar.amo.locator.db'] => $params['amocrmtech.models.ar.amo.locator.db.config'],
+                    $params['amocrmtech.models.ar.amo.db'] => $params['amocrmtech.models.ar.amo.db.config'],
                 ],
             ],
             $params['amocrmtech.models.ar.app.db']  => $params['amocrmtech.models.ar.app.db.config'],

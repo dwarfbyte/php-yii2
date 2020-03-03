@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7af4375f3c8eb5a43ced4a4989c29f7",
+    "content-hash": "16a24479cbd6337f6704d6610a659e86",
     "packages": [
         {
             "name": "amocrmtech/base",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amocrmtech/base.git",
-                "reference": "3847af8afceaa6b43b2f995710a80be77fdc501a"
+                "reference": "9b648638b0cfb81797b89b525fdcce19fe6c0395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amocrmtech/base/zipball/3847af8afceaa6b43b2f995710a80be77fdc501a",
-                "reference": "3847af8afceaa6b43b2f995710a80be77fdc501a",
+                "url": "https://api.github.com/repos/amocrmtech/base/zipball/9b648638b0cfb81797b89b525fdcce19fe6c0395",
+                "reference": "9b648638b0cfb81797b89b525fdcce19fe6c0395",
                 "shasum": ""
             },
             "require": {
@@ -34,6 +34,7 @@
                     "amocrmtech\\base\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -44,11 +45,7 @@
                 }
             ],
             "description": "Base",
-            "support": {
-                "source": "https://github.com/amocrmtech/base/tree/master",
-                "issues": "https://github.com/amocrmtech/base/issues"
-            },
-            "time": "2020-03-03T07:56:27+00:00"
+            "time": "2020-03-03T08:26:44+00:00"
         },
         {
             "name": "bower-asset/inputmask",
