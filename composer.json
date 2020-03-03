@@ -14,7 +14,7 @@
     "ext-pdo": "*",
     "yiisoft/yii2": "~2.0.30",
     "hiqdev/composer-config-plugin": "~0.3",
-    "amocrmtech/base": "dev-master"
+    "amocrmtech/base": "dev-master, ~1.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
@@ -23,10 +23,6 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/amocrmtech/base.git"
     }
   ],
   "autoload": {
