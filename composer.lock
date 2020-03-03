@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16a24479cbd6337f6704d6610a659e86",
+    "content-hash": "1455cdf6160b53f55207f671d7dfd838",
     "packages": [
         {
             "name": "amocrmtech/base",
-            "version": "dev-master",
+            "version": "0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amocrmtech/base.git",
@@ -727,7 +727,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "amocrmtech/base": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
