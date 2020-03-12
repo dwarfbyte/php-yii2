@@ -38,8 +38,8 @@ class Account extends ActiveRecord
      */
     public static function getDb(): Connection
     {
-        $locator = Yii::$app->params['amocrmtech.models.ar.amo.locator'];
-        $db      = Yii::$app->params['amocrmtech.models.ar.amo.locator.db'];
+        $locator = Yii::$app->params['amocrmtech.models.ar.locator'];
+        $db      = Yii::$app->params['amocrmtech.models.ar.amo.db'];
         /** @noinspection PhpIncompatibleReturnTypeInspection,NullPointerExceptionInspection */
         return Yii::$app->get($locator)->get($db);
     }
