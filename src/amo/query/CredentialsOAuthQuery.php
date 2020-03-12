@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection SenselessProxyMethodInspection,ReturnTypeCanBeDeclaredInspection */
 
 namespace amocrmtech\models\ar\amo\query;
 
@@ -13,7 +13,7 @@ class CredentialsOAuthQuery extends ActiveQuery
     /**
      * @return CredentialsOAuthQuery
      */
-    public function active(): CredentialsOAuthQuery
+    public function active()
     {
         // todo modify query on prepare stage
         return $this->andWhere(['is', '[[deleted_at]]', null]);
