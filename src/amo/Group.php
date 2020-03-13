@@ -1,4 +1,5 @@
 <?php
+
 namespace amocrmtech\models\ar\amo;
 
 use Yii;
@@ -8,12 +9,14 @@ use yii\db\ActiveRecord;
 use yii\db\Connection;
 
 /**
- * @property int          $account_id [bigint]
- * @property int          $id         [bigint]
- * @property string       $name       [varchar(255)]
- * @property int          $deleted_at [timestamp]
+ * @property int              $account_id [bigint]
+ * @property int              $id         [bigint]
+ * @property string           $name       [varchar(255)]
+ * @property int              $deleted_at [timestamp]
  *
- * @property-read Account $account
+ * @property-read User[]      $users
+ * @property-read UserGroup[] $userGroups
+ * @property-read Account     $account
  */
 class Group extends ActiveRecord
 {
@@ -69,5 +72,21 @@ class Group extends ActiveRecord
     public function getAccount()
     {
         return $this->hasOne(Account::class, ['id' => 'account_id'])->inverseOf('groups');
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getUserGroups()
+    {
+        return $this->hasMany(UserGroup::class, ['group_id' => 'id']);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(User::class, ['id' => 'user_id'])->via('userGroups');
     }
 }

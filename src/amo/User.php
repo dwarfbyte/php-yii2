@@ -1,4 +1,5 @@
 <?php
+
 namespace amocrmtech\models\ar\amo;
 
 use Yii;
@@ -17,6 +18,8 @@ use yii\db\Connection;
  * @property string             $language     [varchar(255)]
  * @property string             $phone_number [varchar(255)]
  *
+ * @property-read Group[]       $groups
+ * @property-read UserGroup[]   $userGroups
  * @property-read UserAccount[] $userAccounts
  */
 class User extends ActiveRecord
@@ -60,6 +63,22 @@ class User extends ActiveRecord
             ['last_name', 'string'],
             ['language', 'string'],
         ];
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getUserGroups()
+    {
+        return $this->hasMany(UserGroup::class, ['user_id' => 'id']);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getGroups()
+    {
+        return $this->hasMany(Group::class, ['id' => 'group_id'])->via('userGroups');
     }
 
     /**
