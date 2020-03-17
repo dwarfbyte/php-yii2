@@ -95,6 +95,6 @@ class User extends ActiveRecord
      */
     public function getAccounts()
     {
-        return $this->hasMany(Account::class, ['id' => 'account_id'])->via('userAccounts')->inverseOf('users');
+        return $this->hasMany(Account::class, ['id' => 'account_id'])->via('userAccounts');
     }
 }
