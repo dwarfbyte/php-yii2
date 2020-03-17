@@ -27,6 +27,7 @@ use yii\db\Connection;
  * @property-read Pipeline[]         $pipelines
  * @property-read Status[]           $statuses
  * @property-read Group[]            $groups
+ * @property-read User[]             $users
  * @property-read UserAccount[]      $userAccounts
  */
 class Account extends ActiveRecord
@@ -128,6 +129,14 @@ class Account extends ActiveRecord
     public function getUserAccounts(): ActiveQuery
     {
         return $this->hasMany(UserAccount::class, ['account_id' => 'id'])->inverseOf('account');
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getUsers(): ActiveQuery
+    {
+        return $this->hasMany(User::class, ['id' => 'user_id'])->via('userAccounts')->inverseOf('accounts');
     }
 
     /**

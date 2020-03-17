@@ -19,6 +19,7 @@ use yii\db\Connection;
  * @property string             $phone_number [varchar(255)]
  *
  * @property-read Group[]       $groups
+ * @property-read Account[]     $accounts
  * @property-read UserGroup[]   $userGroups
  * @property-read UserAccount[] $userAccounts
  */
@@ -87,5 +88,13 @@ class User extends ActiveRecord
     public function getUserAccounts()
     {
         return $this->hasMany(UserAccount::class, ['user_id' => 'id'])->inverseOf('user');
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getAccounts()
+    {
+        return $this->hasMany(Account::class, ['id' => 'account_id'])->via('userAccounts')->inverseOf('users');
     }
 }
