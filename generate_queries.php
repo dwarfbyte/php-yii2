@@ -1,5 +1,4 @@
 <?php
-
 $template = <<<'TXT'
 <?php
 namespace AmoCRMTech\Yii2\Query;
