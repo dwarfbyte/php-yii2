@@ -1,6 +1,6 @@
 {
-  "name": "amocrmtech/ar-models",
-  "description": "AR Models",
+  "name": "amocrmtech/yii2",
+  "description": "Yii2 package",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -10,10 +10,12 @@
     }
   ],
   "require": {
-    "php": ">=7.2.0",
+    "php": ">=7.4.0",
     "ext-pdo": "*",
-    "yiisoft/yii2": "~2.0.30",
-    "hiqdev/composer-config-plugin": "~0.3",
+    "yiisoft/yii2": "~2.0",
+    "yiisoft/composer-config-plugin": "dev-master",
+    "yiisoft/arrays": "^3.0@dev",
+    "yiisoft/strings": "~1",
     "amocrmtech/base": "~0"
   },
   "require-dev": {
@@ -27,7 +29,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "amocrmtech\\models\\ar\\": "src/"
+      "AmoCRMTech\\Yii2\\": "src/"
     }
   },
   "extra": {
