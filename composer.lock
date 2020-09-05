@@ -4,49 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2c60fe2758b80097a8b4acff12ea87a",
+    "content-hash": "e85191baba2edf16fe23b551fb8b01a1",
     "packages": [
-        {
-            "name": "amocrmtech/base",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/amocrmtech/base.git",
-                "reference": "9b648638b0cfb81797b89b525fdcce19fe6c0395"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/amocrmtech/base/zipball/9b648638b0cfb81797b89b525fdcce19fe6c0395",
-                "reference": "9b648638b0cfb81797b89b525fdcce19fe6c0395",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pdo": "*",
-                "php": ">=7.2.0",
-                "yiisoft/yii2": "~2.0.30"
-            },
-            "require-dev": {
-                "roave/security-advisories": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "amocrmtech\\base\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Kulikov",
-                    "email": "r.v.kulikov@yandex.ru"
-                }
-            ],
-            "description": "Base",
-            "time": "2020-03-03T08:26:44+00:00"
-        },
         {
             "name": "bower-asset/inputmask",
             "version": "3.3.11",
@@ -2233,6 +2192,56 @@
                 }
             ],
             "time": "2020-06-24T00:04:01+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-httpclient",
+            "version": "2.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-httpclient.git",
+                "reference": "a66a2de6d7dd6d068da3f85a12589fedd0d76855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-httpclient/zipball/a66a2de6d7dd6d068da3f85a12589fedd0d76855",
+                "reference": "a66a2de6d7dd6d068da3f85a12589fedd0d76855",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.27|~5.7.21|^6.2"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\httpclient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "HTTP client extension for the Yii framework",
+            "keywords": [
+                "curl",
+                "http",
+                "httpclient",
+                "yii2"
+            ],
+            "time": "2019-10-08T09:48:39+00:00"
         }
     ],
     "packages-dev": [
@@ -2538,14 +2547,15 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yiisoft/composer-config-plugin": 20,
         "yiisoft/arrays": 20,
+        "yiisoft/composer-config-plugin": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4.0",
+        "ext-json": "*",
         "ext-pdo": "*"
     },
     "platform-dev": [],

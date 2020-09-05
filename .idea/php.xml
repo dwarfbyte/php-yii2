@@ -12,7 +12,6 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
-      <path value="$PROJECT_DIR$/vendor/amocrmtech/base" />
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
@@ -36,6 +35,8 @@
       <path value="$PROJECT_DIR$/vendor/yiisoft/arrays" />
       <path value="$PROJECT_DIR$/vendor/riimu/kit-phpencoder" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/composer-config-plugin-output" />
+      <path value="$PROJECT_DIR$/vendor/hiqdev/composer-config-plugin" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

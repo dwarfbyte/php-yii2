@@ -2,8 +2,8 @@
 
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Query\UserQuery;
-use AmoCRMTech\Yii2\Traits\ConnectionTrait;
+use AmoCRMTech\Yii2\Models\Query\UserQuery;
+use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveRecord;
 
 /** @noinspection PropertiesInspection */
@@ -24,7 +24,7 @@ use yii\db\ActiveRecord;
 class User extends ActiveRecord
 {
     use ConnectionTrait {
-        getLocatorDb as getDb;
+        getDbAmo as getDb;
     }
 
     public static function tableName(): string

@@ -2,8 +2,8 @@
 
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Query\UserAccountRightsQuery;
-use AmoCRMTech\Yii2\Traits\ConnectionTrait;
+use AmoCRMTech\Yii2\Models\Query\UserAccountRightsQuery;
+use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveRecord;
 
 /**
@@ -34,7 +34,7 @@ use yii\db\ActiveRecord;
 class UserAccountRights extends ActiveRecord
 {
     use ConnectionTrait {
-        getLocatorDb as getDb;
+        getDbAmo as getDb;
     }
 
     public static function tableName(): string

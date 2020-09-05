@@ -1,13 +1,13 @@
 <?php
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Query\CustomerQuery;
-use AmoCRMTech\Yii2\Traits\ConnectionTrait;
+use AmoCRMTech\Yii2\Models\Query\CustomerQuery;
+use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 
 class Customer
 {
     use ConnectionTrait {
-        getLocatorDb as getDb;
+        getDbAmo as getDb;
     }
 
     public static function find(): CustomerQuery

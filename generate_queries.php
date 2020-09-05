@@ -1,7 +1,7 @@
 <?php
 $template = <<<'TXT'
 <?php
-namespace AmoCRMTech\Yii2\Query;
+namespace AmoCRMTech\Yii2\Models\Query;
 
 use {model_fqn};
 use yii\db\ActiveQuery;
@@ -37,7 +37,7 @@ foreach (glob(__DIR__ . '/src/Models/*.php') as $item) {
     $modelFqn  = "AmoCRMTech\\Yii2\\Models\\{$modelName}";
 
     $queryName = "{$modelName}Query";
-    $queryFqn  = "AmoCRMTech\\Yii2\\Query\\{$queryName}";
+    $queryFqn  = "AmoCRMTech\\Yii2\\Models\\Query\\{$queryName}";
     $queryPath = __DIR__ . "/src/Query/{$queryName}.php";
 
     $content = strtr($template, [

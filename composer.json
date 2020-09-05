@@ -11,12 +11,13 @@
   ],
   "require": {
     "php": ">=7.4.0",
+    "ext-json": "*",
     "ext-pdo": "*",
     "yiisoft/yii2": "~2.0",
-    "yiisoft/composer-config-plugin": "dev-master",
+    "yiisoft/yii2-httpclient": "~2.0",
     "yiisoft/arrays": "^3.0@dev",
     "yiisoft/strings": "~1",
-    "amocrmtech/base": "~0"
+    "yiisoft/composer-config-plugin": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

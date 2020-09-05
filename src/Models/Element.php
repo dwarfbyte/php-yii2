@@ -2,8 +2,8 @@
 
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Query\LinkQuery;
-use AmoCRMTech\Yii2\Traits\ConnectionTrait;
+use AmoCRMTech\Yii2\Models\Query\LinkQuery;
+use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveRecord;
 
 /**
@@ -20,7 +20,7 @@ class Element extends ActiveRecord
     public const ID_CUSTOMER = 12;
 
     use ConnectionTrait {
-        getLocatorDb as getDb;
+        getDbAmo as getDb;
     }
 
     public static function tableName(): string
