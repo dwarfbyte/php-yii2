@@ -1,6 +1,9 @@
 <?php
+/** @noinspection PhpInternalEntityUsedInspection */
 /** @noinspection PhpUndefinedVariableInspection */
 
+use AmoCRMTech\Yii2\DI\ClientLocator;
+use AmoCRMTech\Yii2\DI\ClientLocatorInterface;
 use AmoCRMTech\Yii2\DI\ServiceLocator;
 use AmoCRMTech\Yii2\DI\ServiceLocatorInterface;
 
@@ -11,9 +14,12 @@ return (static function ($params) {
 
     $config = [
         'container'  => [
-            'singletons' => [
-                ServiceLocatorInterface::class => ServiceLocator::class
-            ]
+            'singletons'  => [
+                ServiceLocatorInterface::class => ServiceLocator::class,
+            ],
+            'definitions' => [
+                ClientLocatorInterface::class => ClientLocator::class,
+            ],
         ],
         'components' => [
             $params['amocrmtech.locator'] => [

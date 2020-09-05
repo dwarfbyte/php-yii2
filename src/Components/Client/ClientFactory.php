@@ -31,7 +31,7 @@ class ClientFactory
     {
         return static function () use ($config) {
             return Yii::createObject([
-                'class'         => Client::class,
+                'class'         => ClientInterface::class,
                 'transport'     => CurlTransport::class,
                 'requestConfig' => [
                     'class'  => RequestOAuth::class,
@@ -60,7 +60,7 @@ class ClientFactory
     {
         return static function () use ($config) {
             return Yii::createObject([
-                'class'         => Client::class,
+                'class'         => ClientInterface::class,
                 'transport'     => CurlTransport::class,
                 'requestConfig' => [
                     'class'  => RequestCookies::class,
