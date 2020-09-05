@@ -15,11 +15,12 @@ return [
             'password' => '',
             'charset'  => 'utf8',
         ],
-        'default_client' => fn() => ClientFactory::buildCookies([
-            'subdomain'   => 'your_subdomain',
-            'login'       => 'your_login',
-            'token'       => 'your_token',
-            'cookiesFile' => '@runtime/amocrmtech/cookies_{subdomain}.bin',
+        'default_client' => fn() => ClientFactory::buildOAuth([
+            'subdomain'     => 'your_subdomain',
+            'refreshToken'  => 'your_refresh_token',
+            'redirectUri'   => 'your_redirect_uri',
+            'integrationId' => 'your_integration_id',
+            'secretKey'     => 'your_secret_key',
         ]),
     ],
 ];
