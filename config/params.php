@@ -2,6 +2,7 @@
 
 use AmoCRMTech\Yii2\Components\Client\ClientFactory;
 use yii\db\Connection;
+use yii\db\pgsql\Schema;
 
 return [
     'amocrmtech.enabled'     => true,
@@ -9,11 +10,12 @@ return [
     'amocrmtech.locator'     => 'amocrmtech_locator',
     'amocrmtech.definitions' => [
         'default_db'     => [
-            'class'    => Connection::class,
-            'dsn'      => 'pgsql:host=pgsql.amocrmtech.it;dbname=amocrmtech__account_000000;port=5432',
-            'username' => 'postgres',
-            'password' => '',
-            'charset'  => 'utf8',
+            'class'     => Connection::class,
+            'dsn'       => 'pgsql:host=pgsql.amocrmtech.it;dbname=amocrmtech__account_000000;port=5432',
+            'username'  => 'postgres',
+            'password'  => '',
+            'charset'   => 'utf8',
+            'schemaMap' => ['pgsql' => ['class' => Schema::class, 'defaultSchema' => 'amo']]
         ],
         'default_client' => fn() => ClientFactory::buildOAuth([
             'subdomain'     => 'your_subdomain',
