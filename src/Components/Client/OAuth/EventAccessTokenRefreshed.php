@@ -8,5 +8,7 @@ class EventAccessTokenRefreshed extends Event
 {
     public Request  $request;
     public Response $response;
-    public array    $credentials;
+
+    public PreviousCredentials  $previous;
+    public RefreshedCredentials $refreshed;
 }
