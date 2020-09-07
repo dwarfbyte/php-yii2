@@ -35,7 +35,7 @@ class Request extends \yii\httpclient\Request
 
         $response = parent::send();
 
-        if (!$response->isOk && $response->statusCode === 401) {
+        if (!$response->isOk && (int)$response->statusCode === 401) {
             $this->refreshCredentials();
             $this->headers->remove('Authorization');
             $this->addHeaders(['Authorization' => "Bearer {$config->accessToken}"]);

@@ -35,7 +35,7 @@ class Request extends \yii\httpclient\Request
 
         $response = parent::send();
 
-        if ((int)$response->statusCode === 401) {
+        if (!$response->isOk && (int)$response->statusCode === 401) {
             $this->refreshCookies();
             $response = parent::send();
         }
