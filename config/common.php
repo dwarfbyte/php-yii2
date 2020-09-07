@@ -3,6 +3,8 @@
 
 /** @noinspection PhpUndefinedVariableInspection */
 
+use AmoCRMTech\Yii2\Components\Client\Client;
+use AmoCRMTech\Yii2\Components\Client\ClientInterface;
 use AmoCRMTech\Yii2\DI\ClientLocator;
 use AmoCRMTech\Yii2\DI\ClientLocatorInterface;
 use AmoCRMTech\Yii2\DI\ServiceLocator;
@@ -23,6 +25,7 @@ return (static function ($params) {
             ],
             'definitions' => [
                 ClientLocatorInterface::class => ClientLocator::class,
+                ClientInterface::class        => Client::class,
             ],
         ]
     ];
