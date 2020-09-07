@@ -7,6 +7,7 @@ namespace AmoCRMTech\Yii2\Components\Client\Cookies;
 use AmoCRMTech\Yii2\Helpers\ModelHelper;
 use RuntimeException;
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 use yii\httpclient\Client;
 use yii\httpclient\CurlTransport;
@@ -21,8 +22,9 @@ class Request extends \yii\httpclient\Request
 
     public function __construct($config = [])
     {
-        parent::__construct($config);
-        $this->config = ModelHelper::ensure($this->config, Config::class);
+        parent::__construct(ArrayHelper::merge($config, [
+            'config' => ModelHelper::ensure($config['config'], Config::class)
+        ]));
 
         $this->client->baseUrl = "https://{$this->config->subdomain}.amocrm.ru/api/v4";
     }
