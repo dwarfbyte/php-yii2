@@ -25,7 +25,6 @@ class RequestConfig extends Model
             ['account_subdomain', 'required'],
 
             ['account_id', 'filter', 'filter' => 'intval', 'skipOnEmpty' => true],
-            ['account_id', 'required'],
 
             ['access_token', 'string'],
 
