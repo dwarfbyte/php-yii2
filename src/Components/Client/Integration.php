@@ -3,7 +3,7 @@ namespace AmoCRMTech\Yii2\Components\Client;
 
 use yii\base\BaseObject;
 
-class IntegrationInfo extends BaseObject
+class Integration extends BaseObject
 {
     public ?string $account_id = null;
     public string  $account_subdomain;

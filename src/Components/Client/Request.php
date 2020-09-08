@@ -99,7 +99,7 @@ class Request extends \yii\httpclient\Request
             'refresh_token' => $this->config->refresh_token
         ]);
 
-        $integration = new IntegrationInfo([
+        $integration = new Integration([
             'account_subdomain' => $this->config->account_subdomain,
             'account_id'        => $this->config->account_id,
             'redirect_uri'      => $this->config->redirect_uri,

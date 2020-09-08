@@ -7,5 +7,5 @@ class EventAccessTokenRefreshed extends Event
 {
     public AccessToken      $new;
     public AccessToken      $old;
-    public IntegrationInfo  $integration;
+    public Integration  $integration;
 }
