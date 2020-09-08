@@ -9,5 +9,5 @@ class AccessToken extends BaseObject
     public string  $refresh_token;
     public ?int    $expires    = null;
     public ?int    $expires_in = null;
-    public ?string $token_type = null;
+    public ?string $token_type = 'Bearer';
 }

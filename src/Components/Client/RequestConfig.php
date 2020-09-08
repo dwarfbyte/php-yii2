@@ -25,6 +25,7 @@ class RequestConfig extends Model
             ['account_subdomain', 'required'],
 
             ['account_id', 'string'],
+            ['account_id', 'required'],
 
             ['access_token', 'string'],
 
