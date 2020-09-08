@@ -3,8 +3,8 @@
 
 namespace AmoCRMTech\Yii2\Components\Client;
 
-use AmoCRMTech\Yii2\Components\Client\OAuth\Config as ConfigOAuth;
-use AmoCRMTech\Yii2\Components\Client\OAuth\Request as RequestOAuth;
+use AmoCRMTech\Yii2\Components\Client\Request as RequestOAuth;
+use AmoCRMTech\Yii2\Components\Client\RequestConfig as ConfigOAuth;
 use Yii;
 use yii\httpclient\CurlTransport;
 
@@ -27,15 +27,13 @@ class ClientFactory
      */
     public static function lazyOAuth($config)
     {
-        return static function () use ($config) {
-            return Yii::createObject([
-                'class'         => ClientInterface::class,
-                'transport'     => CurlTransport::class,
-                'requestConfig' => [
-                    'class'  => RequestOAuth::class,
-                    'config' => $config,
-                ],
-            ]);
-        };
+        return fn() => Yii::createObject([
+            'class'         => ClientInterface::class,
+            'transport'     => CurlTransport::class,
+            'requestConfig' => [
+                'class'  => RequestOAuth::class,
+                'config' => $config,
+            ],
+        ]);
     }
 }
