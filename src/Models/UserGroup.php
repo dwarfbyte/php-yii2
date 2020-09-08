@@ -36,12 +36,9 @@ class UserGroup extends ActiveRecord
         return new UserGroupQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['user_id', 'exist', 'targetRelation' => 'user'],
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getAccount()

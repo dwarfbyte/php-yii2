@@ -8,15 +8,25 @@ use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 /**
- * @property int                $id              [bigint]
- * @property string             $name            [varchar(255)]
- * @property string             $subdomain       [varchar(255)]
- * @property string             $currency        [varchar(255)]
- * @property string             $timezone        [varchar(255)]
- * @property string             $timezone_offset [varchar(255)]
- * @property string             $language        [varchar(255)]
- * @property string             $date_pattern    [jsonb]
- * @property int                $current_user    [bigint]
+ * @property int                $id
+ * @property string             $name
+ * @property string             $subdomain
+ * @property string             $created_at
+ * @property string             $created_by
+ * @property string             $updated_at
+ * @property string             $updated_by
+ * @property string             $current_user_id
+ * @property string             $country
+ * @property string             $currency
+ * @property string             $customers_mode
+ * @property string             $is_unsorted_on
+ * @property string             $mobile_feature_version
+ * @property string             $is_loss_reason_enabled
+ * @property string             $is_helpbot_enabled
+ * @property string             $is_technical_account
+ * @property string             $contact_name_display_order
+ * @property string             $version
+ * @property string             $entity_names
  *
  * @property-read Pipeline[]    $pipelines
  * @property-read Status[]      $statuses
@@ -32,7 +42,7 @@ class Account extends ActiveRecord
 
     public static function tableName(): string
     {
-        return '{{%account}}';
+        return 'account';
     }
 
     public static function find(): AccountQuery
@@ -42,29 +52,7 @@ class Account extends ActiveRecord
 
     public function rules(): array
     {
-        return [
-            ['id', 'integer'],
-            ['id', 'unique'],
-            ['id', 'required'],
-
-            ['subdomain', 'string'],
-            ['subdomain', 'unique'],
-            ['subdomain', 'required'],
-
-            ['name', 'string'],
-
-            ['currency', 'string'],
-
-            ['timezone', 'string'],
-
-            ['timezone_offset', 'string'],
-
-            ['language', 'string'],
-
-            ['date_pattern', 'safe'],
-
-            ['current_user', 'integer'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getPipelines(): ActiveQuery

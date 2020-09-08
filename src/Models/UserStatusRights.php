@@ -41,33 +41,9 @@ class UserStatusRights extends ActiveRecord
         return new UserStatusRights(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['user_id', 'exist', 'targetRelation' => 'user'],
-            ['user_id', 'required'],
-
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-            ['account_id', 'required'],
-
-            ['pipeline_id', 'exist', 'targetRelation' => 'pipeline'],
-            ['pipeline_id', 'required'],
-
-            ['status_id', 'exist', 'targetRelation' => 'status'],
-            ['status_id', 'required'],
-
-            ['view', 'string'],
-            ['view', 'required'],
-
-            ['edit', 'string'],
-            ['edit', 'required'],
-
-            ['delete', 'string'],
-            ['delete', 'required'],
-
-            ['export', 'string'],
-            ['export', 'required'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getUser()

@@ -31,18 +31,9 @@ class Group extends ActiveRecord
         return ['account_id', 'id'];
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-            ['account_id', 'required'],
-
-            ['id', 'integer'],
-            ['id', 'required'],
-
-            ['name', 'string'],
-            ['deleted_at', 'safe'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getAccount()

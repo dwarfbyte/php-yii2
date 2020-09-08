@@ -52,70 +52,9 @@ class UserAccountRights extends ActiveRecord
         return new UserAccountRightsQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['user_id', 'exist', 'targetRelation' => 'user'],
-            ['user_id', 'required'],
-
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-            ['account_id', 'required'],
-
-            ['incoming_leads', 'string'],
-            ['incoming_leads', 'required'],
-
-            ['catalogs', 'string'],
-            ['catalogs', 'required'],
-
-            ['lead_add', 'string'],
-            ['lead_add', 'required'],
-
-            ['lead_view', 'string'],
-            ['lead_view', 'required'],
-
-            ['lead_edit', 'string'],
-            ['lead_edit', 'required'],
-
-            ['lead_export', 'string'],
-            ['lead_export', 'required'],
-
-            ['contact_add', 'string'],
-            ['contact_add', 'required'],
-
-            ['contact_view', 'string'],
-            ['contact_view', 'required'],
-
-            ['contact_edit', 'string'],
-            ['contact_edit', 'required'],
-
-            ['contact_delete', 'string'],
-            ['contact_delete', 'required'],
-
-            ['contact_export', 'string'],
-            ['contact_export', 'required'],
-
-            ['company_add', 'string'],
-            ['company_add', 'required'],
-
-            ['company_view', 'string'],
-            ['company_view', 'required'],
-
-            ['company_edit', 'string'],
-            ['company_edit', 'required'],
-
-            ['company_delete', 'string'],
-            ['company_delete', 'required'],
-
-            ['company_export', 'string'],
-            ['company_export', 'required'],
-
-            ['task_edit', 'string'],
-            ['task_edit', 'required'],
-
-            ['task_delete', 'string'],
-            ['task_delete', 'required'],
-        ];
-
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getUser()

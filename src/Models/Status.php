@@ -39,24 +39,9 @@ class Status extends ActiveRecord
         return new StatusQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-            ['account_id', 'required'],
-
-            ['pipeline_id', 'exist', 'targetRelation' => 'pipeline'],
-            ['pipeline_id', 'required'],
-
-            ['id', 'integer'],
-            ['id', 'required'],
-
-            ['name', 'string'],
-            ['color', 'string'],
-            ['sort', 'integer'],
-            ['is_editable', 'boolean'],
-            ['deleted_at', 'safe'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getAccount()

@@ -42,21 +42,9 @@ class User extends ActiveRecord
         return new UserQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['id', 'integer'],
-            ['id', 'unique'],
-            ['id', 'required'],
-
-            ['login', 'string'],
-            ['login', 'unique'],
-            ['login', 'required'],
-
-            ['name', 'string'],
-            ['last_name', 'string'],
-            ['language', 'string'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getUserGroups()

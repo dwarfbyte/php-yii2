@@ -37,21 +37,9 @@ class UserAccount extends ActiveRecord
         return new UserAccountQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['user_id', 'exist', 'targetRelation' => 'user'],
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-
-            ['is_active', 'boolean'],
-            ['is_active', 'required'],
-
-            ['is_admin', 'boolean'],
-            ['is_admin', 'required'],
-
-            ['is_free', 'boolean'],
-            ['is_free', 'required'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getAccount()

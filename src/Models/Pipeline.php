@@ -37,21 +37,9 @@ class Pipeline extends ActiveRecord
         return new PipelineQuery(static::class);
     }
 
-    public function rules()
+    public function rules(): array
     {
-        return [
-            ['account_id', 'exist', 'targetRelation' => 'account'],
-            ['account_id', 'required'],
-
-            ['id', 'integer'],
-            ['id', 'unique'],
-            ['id', 'required'],
-
-            ['name', 'string'],
-            ['sort', 'integer'],
-            ['is_main', 'boolean'],
-            ['deleted_at', 'safe'],
-        ];
+        return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
     public function getAccount()
