@@ -13,6 +13,8 @@ class Config extends Model
     public ?string $integrationId = null;
     public ?string $secretKey     = null;
 
+    public $onAccessTokenRefresh = null;
+
     public function rules(): array
     {
         return [
@@ -32,6 +34,8 @@ class Config extends Model
 
             ['secretKey', 'string'],
             ['secretKey', 'required'],
+
+            ['onAccessTokenRefresh', 'safe'],
         ];
     }
 }

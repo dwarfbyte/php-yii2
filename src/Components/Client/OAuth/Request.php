@@ -10,6 +10,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\httpclient\Client;
 use yii\httpclient\CurlTransport;
+use yii\httpclient\Response;
 
 class Request extends \yii\httpclient\Request
 {
@@ -71,25 +72,41 @@ class Request extends \yii\httpclient\Request
             throw new RuntimeException("Token's expires_in parameter is below zero");
         }
 
-        $config->accessToken = $response->data['access_token'];
+        $config->accessToken  = $response->data['access_token'];
+        $config->refreshToken = $response->data['refresh_token'];
+
+        [$refreshed, $previous] = $this->buildRefreshTuple($response);
+
+        if (is_callable($this->config->onAccessTokenRefresh)) {
+            Yii::$container->invoke($this->config->onAccessTokenRefresh, [$refreshed, $previous]);
+        }
 
         $this->trigger(self::EVENT_ACCESS_TOKEN_REFRESHED, new EventAccessTokenRefreshed([
             'request'   => $this,
             'response'  => $response,
-            'previous'  => new PreviousCredentials([
-                'account_subdomain' => $this->config->subdomain,
-                'access_token'      => $this->config->accessToken,
-                'refresh_token'     => $this->config->refreshToken,
-                'redirect_uri'      => $this->config->redirectUri,
-                'integration_id'    => $this->config->integrationId,
-                'secret_key'        => $this->config->secretKey,
-            ]),
-            'refreshed' => new RefreshedCredentials([
-                'access_token'  => $response->data['access_token'],
-                'refresh_token' => $response->data['refresh_token'],
-                'token_type'    => $response->data['token_type'],
-                'expires_in'    => $response->data['expires_in'],
-            ]),
+            'previous'  => $previous,
+            'refreshed' => $refreshed,
         ]));
+    }
+
+    private function buildRefreshTuple(Response $response): array
+    {
+        $refreshed = new RefreshedCredentials([
+            'access_token'  => $response->data['access_token'],
+            'refresh_token' => $response->data['refresh_token'],
+            'token_type'    => $response->data['token_type'],
+            'expires_in'    => $response->data['expires_in'],
+        ]);
+
+        $previous = new PreviousCredentials([
+            'account_subdomain' => $this->config->subdomain,
+            'access_token'      => $this->config->accessToken,
+            'refresh_token'     => $this->config->refreshToken,
+            'redirect_uri'      => $this->config->redirectUri,
+            'integration_id'    => $this->config->integrationId,
+            'secret_key'        => $this->config->secretKey,
+        ]);
+
+        return [$refreshed, $previous];
     }
 }
