@@ -32,7 +32,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -1844,18 +1844,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/arrays.git",
-                "reference": "6d825039141d918b24006fb0f1e307e50973d832"
+                "reference": "72736b7ece25be4e79b727923e3e91e804130c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/arrays/zipball/6d825039141d918b24006fb0f1e307e50973d832",
-                "reference": "6d825039141d918b24006fb0f1e307e50973d832",
+                "url": "https://api.github.com/repos/yiisoft/arrays/zipball/72736b7ece25be4e79b727923e3e91e804130c9a",
+                "reference": "72736b7ece25be4e79b727923e3e91e804130c9a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
+                "infection/infection": "^0.17.0",
+                "phan/phan": "^3.0",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -1890,7 +1892,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2020-09-04T17:23:57+00:00"
+            "time": "2020-09-11T16:35:30+00:00"
         },
         {
             "name": "yiisoft/composer-config-plugin",
@@ -2012,16 +2014,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.37",
+            "version": "2.0.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738"
+                "reference": "fd01e747cc66a049ec105048f0ab8dfbdf60bf4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e8094d1aa9e807fbea970bc1360ab836ffb1b738",
-                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/fd01e747cc66a049ec105048f0ab8dfbdf60bf4b",
+                "reference": "fd01e747cc66a049ec105048f0ab8dfbdf60bf4b",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2124,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-07T20:11:56+00:00"
+            "time": "2020-09-14T21:52:10+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -2251,12 +2253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "697cfbd44fa43ebb5cd9d5ce6d8fc0edcbce85b8"
+                "reference": "34a7a7aa563809d603e12e34f0608d5f2da94f7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/697cfbd44fa43ebb5cd9d5ce6d8fc0edcbce85b8",
-                "reference": "697cfbd44fa43ebb5cd9d5ce6d8fc0edcbce85b8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/34a7a7aa563809d603e12e34f0608d5f2da94f7f",
+                "reference": "34a7a7aa563809d603e12e34f0608d5f2da94f7f",
                 "shasum": ""
             },
             "conflict": {
@@ -2312,11 +2314,12 @@
                 "ezsystems/ezfind-ls": ">=5.3,<5.3.6.1|>=5.4,<5.4.11.1|>=2017.12,<2017.12.0.1",
                 "ezsystems/ezplatform": ">=1.7,<1.7.9.1|>=1.13,<1.13.5.1|>=2.5,<2.5.4",
                 "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6",
-                "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2",
+                "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2.1|>=5,<5.0.1|>=5.1,<5.1.1",
                 "ezsystems/ezplatform-kernel": ">=1,<1.0.2.1",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": ">=5.3,<5.3.12.1|>=5.4,<5.4.14.2|>=6,<6.7.9.1|>=6.8,<6.13.6.3|>=7,<7.2.4.1|>=7.3,<7.3.2.1|>=7.5,<7.5.7.1",
                 "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.6|>=5.4,<5.4.14.1|>=2011,<2017.12.7.2|>=2018.6,<2018.6.1.4|>=2018.9,<2018.9.1.3|>=2019.3,<2019.3.4.2",
+                "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
                 "ezyang/htmlpurifier": "<4.1.1",
                 "firebase/php-jwt": "<2",
@@ -2374,6 +2377,7 @@
                 "paragonie/random_compat": "<2",
                 "paypal/merchant-sdk-php": "<3.12",
                 "pear/archive_tar": "<1.4.4",
+                "personnummer/personnummer": "<3.0.2",
                 "phpfastcache/phpfastcache": ">=5,<5.0.13",
                 "phpmailer/phpmailer": "<6.1.6",
                 "phpmussel/phpmussel": ">=1,<1.6",
@@ -2385,6 +2389,7 @@
                 "phpxmlrpc/extras": "<0.6.1",
                 "pimcore/pimcore": "<6.3",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
+                "prestashop/contactform": ">1.0.1,<4.3",
                 "prestashop/gamification": "<2.3.2",
                 "prestashop/ps_facetedsearch": "<3.4.1",
                 "privatebin/privatebin": "<1.2.2|>=1.3,<1.3.2",
@@ -2479,7 +2484,7 @@
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "yii2mod/yii2-cms": "<1.9.2",
                 "yiisoft/yii": ">=1.1.14,<1.1.15",
-                "yiisoft/yii2": "<2.0.15",
+                "yiisoft/yii2": "<2.0.38",
                 "yiisoft/yii2-bootstrap": "<2.0.4",
                 "yiisoft/yii2-dev": "<2.0.15",
                 "yiisoft/yii2-elasticsearch": "<2.0.5",
@@ -2541,7 +2546,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-02T19:02:24+00:00"
+            "time": "2020-09-15T19:01:50+00:00"
         }
     ],
     "aliases": [],
