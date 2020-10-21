@@ -17,12 +17,14 @@ return [
             'charset'   => 'utf8',
             'schemaMap' => ['pgsql' => ['class' => Schema::class, 'defaultSchema' => 'amo']]
         ],
-        'default_client' => fn() => ClientFactory::buildOAuth([
-            'subdomain'     => 'your_subdomain',
-            'refreshToken'  => 'your_refresh_token',
-            'redirectUri'   => 'your_redirect_uri',
-            'integrationId' => 'your_integration_id',
-            'secretKey'     => 'your_secret_key',
-        ]),
+        'default_client' => function () {
+            return ClientFactory::buildOAuth([
+                'subdomain'     => 'your_subdomain',
+                'refreshToken'  => 'your_refresh_token',
+                'redirectUri'   => 'your_redirect_uri',
+                'integrationId' => 'your_integration_id',
+                'secretKey'     => 'your_secret_key',
+            ]);
+        },
     ],
 ];

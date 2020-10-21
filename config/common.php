@@ -1,7 +1,5 @@
 <?php
-/** @noinspection PhpInternalEntityUsedInspection */
-
-/** @noinspection PhpUndefinedVariableInspection */
+/** @noinspection PhpInternalEntityUsedInspection,PhpUndefinedVariableInspection */
 
 use AmoCRMTech\Yii2\Components\Client\Client;
 use AmoCRMTech\Yii2\Components\Client\ClientInterface;
