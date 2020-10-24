@@ -1,14 +1,13 @@
 <?php
-
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Models\Query\UserAccountRightsQuery;
+use AmoCRMTech\Yii2\Models\Query\RoleAccountRightsQuery;
 use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 /**
- * @property int          $user_id        [bigint]
+ * @property int          $role_id        [bigint]
  * @property int          $account_id     [bigint]
  * @property string       $incoming_leads [char]
  * @property string       $catalogs       [char]
@@ -33,7 +32,7 @@ use yii\db\ActiveRecord;
  * @property-read User    $user
  * @property-read Account $account
  */
-class UserAccountRights extends ActiveRecord
+class RoleAccountRights extends ActiveRecord
 {
     use ConnectionTrait {
         getDbAmo as getDb;
@@ -41,17 +40,17 @@ class UserAccountRights extends ActiveRecord
 
     public static function tableName(): string
     {
-        return '{{%user_account_rights}}';
+        return '{{%role_account_rights}}';
     }
 
     public static function primaryKey(): array
     {
-        return ['user_id', 'account_id'];
+        return ['account_id', 'role_id'];
     }
 
-    public static function find(): UserAccountRightsQuery
+    public static function find(): RoleAccountRightsQuery
     {
-        return new UserAccountRightsQuery(static::class);
+        return new RoleAccountRightsQuery(static::class);
     }
 
     public function rules(): array
@@ -61,11 +60,11 @@ class UserAccountRights extends ActiveRecord
 
     public function getUser(): ActiveQuery
     {
-        return $this->hasOne(User::class, ['id' => 'user_id'])->inverseOf('userAccountRights');
+        return $this->hasOne(User::class, ['id' => 'user_id'])->inverseOf('roleAccountRights');
     }
 
     public function getAccount(): ActiveQuery
     {
-        return $this->hasOne(Account::class, ['id' => 'account_id'])->inverseOf('userAccountRights');
+        return $this->hasOne(Account::class, ['id' => 'account_id'])->inverseOf('roleAccountRights');
     }
 }

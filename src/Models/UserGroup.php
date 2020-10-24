@@ -13,7 +13,6 @@ use yii\db\ActiveRecord;
  *
  * @property-read User    $user
  * @property-read Account $account
- * @property-read Group   $group
  */
 class UserGroup extends ActiveRecord
 {
@@ -44,11 +43,6 @@ class UserGroup extends ActiveRecord
     public function getAccount()
     {
         return $this->hasOne(Account::class, ['id' => 'account_id'])->inverseOf('userAccounts');
-    }
-
-    public function getGroup()
-    {
-        return $this->hasOne(Group::class, ['id' => 'group_id'])->inverseOf('userGroups');
     }
 
     public function getUser()

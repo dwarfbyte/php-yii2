@@ -1,17 +1,17 @@
 <?php
 namespace AmoCRMTech\Yii2\Models\Query;
 
-use AmoCRMTech\Yii2\Models\Group;
+use AmoCRMTech\Yii2\Models\RoleStatusRights;
 use yii\db\ActiveQuery;
 
 /**
- * @see \AmoCRMTech\Yii2\Models\Group
+ * @see \AmoCRMTech\Yii2\Models\RoleStatusRights
  */
-class GroupQuery extends ActiveQuery
+class RoleStatusRightsQuery extends ActiveQuery
 {
     /**
      * {@inheritDoc}
-     * @return Group[]|array
+     * @return RoleStatusRights[]|array
      */
     public function all($db = null): array
     {
@@ -20,7 +20,7 @@ class GroupQuery extends ActiveQuery
 
     /**
      * {@inheritDoc}
-     * @return Group|array|null
+     * @return RoleStatusRights|array|null
      * @noinspection SenselessProxyMethodInspection
      */
     public function one($db = null)

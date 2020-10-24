@@ -38,7 +38,7 @@ foreach (glob(__DIR__ . '/src/Models/*.php') as $item) {
 
     $queryName = "{$modelName}Query";
     $queryFqn  = "AmoCRMTech\\Yii2\\Models\\Query\\{$queryName}";
-    $queryPath = __DIR__ . "/src/Query/{$queryName}.php";
+    $queryPath = __DIR__ . "/src/Models/Query/{$queryName}.php";
 
     $content = strtr($template, [
         '{model_name}' => $modelName,

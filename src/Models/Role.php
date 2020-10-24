@@ -1,27 +1,24 @@
-<?php /** @noinspection PhpUnused */
-
+<?php
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Models\Query\UserQuery;
+use AmoCRMTech\Yii2\Models\Query\RoleQuery;
 use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
-/** @noinspection PropertiesInspection */
-
 /**
- * @property int                $id           [bigint]
- * @property string             $name         [varchar(255)]
- * @property string             $last_name    [varchar(255)]
- * @property string             $login        [varchar(255)]
- * @property string             $language     [varchar(255)]
- * @property string             $phone_number [varchar(255)]
+ * @property int                $account_id [bigint]
+ * @property int                $id         [bigint]
+ * @property string             $name       [varchar(255)]
+ * @property bool               $is_active  [boolean]
+ * @property bool               $is_free    [boolean]
+ * @property bool               $is_admin   [boolean]
  *
  * @property-read Account[]     $accounts
  * @property-read UserGroup[]   $userGroups
  * @property-read UserAccount[] $userAccounts
  */
-class User extends ActiveRecord
+class Role extends ActiveRecord
 {
     use ConnectionTrait {
         getDbAmo as getDb;
@@ -29,27 +26,22 @@ class User extends ActiveRecord
 
     public static function tableName(): string
     {
-        return '{{%user}}';
+        return '{{%role}}';
     }
 
     public static function primaryKey(): array
     {
-        return ['id'];
+        return ['account_id', 'id'];
     }
 
-    public static function find(): UserQuery
+    public static function find(): RoleQuery
     {
-        return new UserQuery(static::class);
+        return new RoleQuery(static::class);
     }
 
     public function rules(): array
     {
         return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
-    }
-
-    public function getUserGroups(): ActiveQuery
-    {
-        return $this->hasMany(UserGroup::class, ['user_id' => 'id']);
     }
 
     public function getGroups(): ActiveQuery
