@@ -29,7 +29,7 @@ class RoleStatusRights extends ActiveRecord
 
     public static function tableName(): string
     {
-        return '{{%user_status_rights}}';
+        return '{{%role_status_rights}}';
     }
 
     public static function primaryKey(): array
