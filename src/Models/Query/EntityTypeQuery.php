@@ -7,7 +7,7 @@ use yii\db\ActiveQuery;
 /**
  * @see \AmoCRMTech\Yii2\Models\EntityType
  */
-class ElementQuery extends ActiveQuery
+class EntityTypeQuery extends ActiveQuery
 {
     /**
      * {@inheritDoc}

@@ -2,7 +2,7 @@
 
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Models\Query\LinkQuery;
+use AmoCRMTech\Yii2\Models\Query\EntityTypeQuery;
 use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveRecord;
 
@@ -33,9 +33,9 @@ class EntityType extends ActiveRecord
         return ['id'];
     }
 
-    public static function find(): LinkQuery
+    public static function find(): EntityTypeQuery
     {
-        return new LinkQuery(static::class);
+        return new EntityTypeQuery(static::class);
     }
 
 }
