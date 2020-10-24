@@ -25,7 +25,7 @@ class EntityType extends ActiveRecord
 
     public static function tableName(): string
     {
-        return '{{%element}}';
+        return '{{%entity_type}}';
     }
 
     public static function primaryKey(): array
