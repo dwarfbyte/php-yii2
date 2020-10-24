@@ -11,7 +11,7 @@ use yii\db\ActiveRecord;
  * @property string $type [varchar(16)]
  * @property string $name [varchar(255)]
  */
-class Element extends ActiveRecord
+class EntityType extends ActiveRecord
 {
     public const ID_CONTACT  = 1;
     public const ID_LEAD     = 2;

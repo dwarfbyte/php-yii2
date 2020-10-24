@@ -1,17 +1,17 @@
 <?php
 namespace AmoCRMTech\Yii2\Models\Query;
 
-use AmoCRMTech\Yii2\Models\Element;
+use AmoCRMTech\Yii2\Models\EntityType;
 use yii\db\ActiveQuery;
 
 /**
- * @see \AmoCRMTech\Yii2\Models\Element
+ * @see \AmoCRMTech\Yii2\Models\EntityType
  */
 class ElementQuery extends ActiveQuery
 {
     /**
      * {@inheritDoc}
-     * @return Element[]|array
+     * @return EntityType[]|array
      */
     public function all($db = null): array
     {
@@ -20,7 +20,7 @@ class ElementQuery extends ActiveQuery
 
     /**
      * {@inheritDoc}
-     * @return Element|array|null
+     * @return EntityType|array|null
      * @noinspection SenselessProxyMethodInspection
      */
     public function one($db = null)
