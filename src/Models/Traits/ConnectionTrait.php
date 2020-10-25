@@ -14,7 +14,6 @@ trait ConnectionTrait
 {
     public static function getDbAmo(): Connection
     {
-        /** @noinspection PhpIncompatibleReturnTypeInspection */
         return Yii::createObject(ServiceLocatorInterface::class)->get('db');
     }
 }
