@@ -1,12 +1,11 @@
 <?php
-
 namespace AmoCRMTech\Yii2\Models;
 
-use AmoCRMTech\Yii2\Models\Query\CustomFieldQuery;
+use AmoCRMTech\Yii2\Models\Query\CustomFieldRequiredStatusQuery;
 use AmoCRMTech\Yii2\Models\Traits\ConnectionTrait;
 use yii\db\ActiveRecord;
 
-class CustomField extends ActiveRecord
+class CustomFieldRequiredStatus extends ActiveRecord
 {
     use ConnectionTrait {
         getDbAmo as getDb;
@@ -14,12 +13,12 @@ class CustomField extends ActiveRecord
 
     public static function tableName(): string
     {
-        return 'custom_field';
+        return 'custom_field_required_status';
     }
 
     public static function primaryKey(): array
     {
-        return ['account_id', 'id'];
+        return ['account_id', 'custom_field_id', 'id'];
     }
 
     public function rules(): array
@@ -27,8 +26,8 @@ class CustomField extends ActiveRecord
         return array_map(fn($attr) => [$attr, 'safe'], $this->attributes());
     }
 
-    public static function find(): CustomFieldQuery
+    public static function find(): CustomFieldRequiredStatusQuery
     {
-        return new CustomFieldQuery(static::class);
+        return new CustomFieldRequiredStatusQuery(static::class);
     }
 }
