@@ -32,11 +32,12 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/strings" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/composer-config-plugin" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/arrays" />
       <path value="$PROJECT_DIR$/vendor/riimu/kit-phpencoder" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/composer-config-plugin-output" />
       <path value="$PROJECT_DIR$/vendor/hiqdev/composer-config-plugin" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/files" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

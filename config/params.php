@@ -11,11 +11,11 @@ return [
     'amocrmtech.definitions' => [
         'default_db'     => [
             'class'     => Connection::class,
-            'dsn'       => 'pgsql:host=pgsql.amocrmtech.it;dbname=amocrmtech__account_000000;port=5432',
+            'dsn'       => 'pgsql:host=pgsql.amocrmtech.it;dbname=0000000;port=5434',
             'username'  => 'postgres',
             'password'  => '',
             'charset'   => 'utf8',
-            'schemaMap' => ['pgsql' => ['class' => Schema::class, 'defaultSchema' => 'amo']]
+            'schemaMap' => ['pgsql' => ['class' => Schema::class, 'defaultSchema' => 'v4']]
         ],
         'default_client' => function () {
             return ClientFactory::buildOAuth([
